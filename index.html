@@ -1,0 +1,103 @@
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Node.js</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" aria-expanded="false" aria-controls="navbar" type="button" data-toggle="collapse" data-target="#navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://rebeccalayman.github.io/" style="color:#EF5F7F">Back to Homepage</a>
+        <!--/.navbar-collapse -->
+      </div>
+    </nav>
+	
+
+		<div style="background: linear-gradient(to bottom, #f2305d 0%,#f7c0ca 100%); ">
+        <h1 style="padding-left: 100; padding-right:100; padding-top:70">Learn The Basics of Node.js!</h1>
+        <p style="padding-left: 100; padding-right:100"> In this post I am going to talk about some basics of node.js. </p>
+        </div>
+    
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>What is Node.js?</h2>
+          <p>Node.js, often called simply "Node" in conversation, is a development platform built on top
+		  of Google's V8 JavaScript virtual machine. While JavaScript engines (including V8) are 
+		  traditionally run in Web browsers to form the client side of a client/server application, 
+		  the Node.js libraries are focused on building server-side applications in JavaScript. Node.js
+		  applications are written in JavaScript, and can be run within the Node.js runtime on OS X, 
+		  Microsoft Windows, Linux, FreeBSD, and IBM. 
+		  <br><br>
+		  Node.js was created and first published for Linux use in 2009. Its development and maintenance
+		  was spearheaded by Ryan Dahl and sponsored by Joyent, the firm where Dahl worked. Dahl was 
+		  inspired to create Node.js after seeing a file upload progress bar on Flickr. The browser did
+		  not know how much of the file had been uploaded and had to query the Web server. Dahl desired
+		  an easier way. It heralded international attention after its debut at the inaugural JSConf EU
+		  conference in November 2009. </p>
+         
+        </div>
+        <div class="col-md-4">
+          <h2>Digging Deeper into Node.js</h2>
+          <p>How it works under-the-hood is pretty interesting. Compared to traditional web-serving 
+		  techniques where each connection (request) spawns a new thread, taking up system RAM and 
+		  eventually maxing-out at the amount of RAM available, Node.js operates on a single-thread,  
+		  allowing it to support tens of thousands of concurrent connections (held in the event loop).
+		  <br><br>
+		  This relates to one of the major advantages of Node.js, according to its creator Ryan Dahl, 
+		  which is that it does not block input/output (I/O). Some developers are highly critical of
+		  Node.js and point out that if a single process requires a significant number of CPU cycles, 
+		  the application will block and that the blocking can crash the application. Proponents of the
+		  Node.js model claim that CPU processing time is less of a concern because of the high number 
+		  of small processes that Node code is based on.</p>
+          
+       </div>
+        <div class="col-md-4">
+          <h2>An Example of Node.js</h2>
+          <p>In the simplest example, we have a single chatroom on our website where people come and 
+		  can exchange messages in one-to-many fashion. For instance, say we have three people on the
+		  website all connected to our message board.
+		  <br><br>
+		  When one of the clients posts a message, here’s what happens:</p>
+          <ol>
+		  <li>Browser catches the ‘Send’ button click through a JavaScript handler, picks up the value
+		  from the input field (i.e., the message text), and emits a websocket message using the 
+		  websocket client connected to our server (initialized on web page initialization).</li>
+		  <li>Server-side component of the websocket connection receives the message and forwards it to 
+		  all other connected clients using the broadcast method.</li>
+		  <li>All clients receive the new message as a push message via a websockets client-side 
+		  component running within the web page. They then pick up the message content and update the 
+		  web page in-place by appending the new message to the board.</li>
+		  </ol>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>© Becky Inc. 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    
+
+</body></html>
